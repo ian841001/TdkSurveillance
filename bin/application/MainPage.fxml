@@ -200,6 +200,12 @@
 		<ImageView fx:id="imageView1" fitHeight="500" fitWidth="500" layoutX="510" layoutY="0" pickOnBounds="true" preserveRatio="true" />
 	</Pane>
 	<!-- end image -->
+	
+	<!-- extra -->
+	<Pane layoutX="20" layoutY="650">
+		<Label fx:id="extraMsgLbl0" layoutX="0" layoutY="0" text="0" />
+	</Pane>
+	<!-- end extra -->
 </Pane>
 
 <!-- 

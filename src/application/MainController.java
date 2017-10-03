@@ -66,6 +66,8 @@ public class MainController implements Initializable {
 	@FXML ImageView imageView0, imageView1;
 	ImageView[] imageView;
 	
+	@FXML Label extraMsgLbl0;
+	
 	
 	private BufferedImage bufferedImage = new BufferedImage(500,  500, BufferedImage.TYPE_INT_ARGB);
 	private Graphics2D g = bufferedImage.createGraphics();
@@ -82,6 +84,8 @@ public class MainController implements Initializable {
 	
 	
 	private String msgStr = "message from rpi";
+	private String extraMsgStr = "message from rpi";
+	
 	
 	
 	
@@ -134,6 +138,7 @@ public class MainController implements Initializable {
 				msgLbl.setStyle("-fx-background-color: " + (new String[]{"#66FF66", "#FFFF00", "#FF8080"}[level]));
 				msgLbl.setText(msgStr);
 				
+				extraMsgLbl0.setText(extraMsgStr);
 				
 				for (int i = 0; i < extraInfoLbl.length; i++) {
 					extraInfoLbl[i].setText(String.valueOf(extraInfo[i]));
@@ -261,7 +266,7 @@ public class MainController implements Initializable {
 					
 					
 					msgStr = new String(Main.mcuSocket.cmd(Cmd.CMD_GET_MSG));
-					
+					extraMsgStr = new String(Main.mcuSocket.cmd(Cmd.CMD_GET_EXTRA_MSG));
 					
 					
 					
